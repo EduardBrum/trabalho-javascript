@@ -34,6 +34,10 @@ function handleClick(e) {
 }
 
 window.addEventListener("load", function () {
+  if (sessionStorage.getItem("credentials") == null) {
+    alert("Você precisa estar logado para acessar essa página");
+    window.location.href = "index.html";
+}
   let armazenamento = localStorage.getItem("EduardBrum");
   if (armazenamento) {
 armazenamento = JSON.parse(armazenamento);
